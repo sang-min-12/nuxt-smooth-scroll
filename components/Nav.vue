@@ -3,7 +3,7 @@
     <div class="bg-black fixed min-h-screen w-screen flex md:hidden overflow-hidden" ref="m_screen_menu">
         <div class="md:hidden flex absolute  right-10"><button ref="m_menu_button" @click="close"><p class="text-red-800">Zamkij</p></button></div>
         <div class="md:hidden flex absolute  left-10"><button ref="m_menu_button"><p class="text-red-800">LOGO</p></button></div>
-            <div class="absolute flex flex-col bottom-20 gap-4">
+            <div class="absolute flex flex-col mb-10 gap-4 inset-5 justify-end">
                     <NuxtLink to=""><h3 class="text-white" ref="m_page1">Page1</h3></NuxtLink>
                     <NuxtLink to=""><h3 class="text-white" ref="m_page2">Page1</h3></NuxtLink>
                     <NuxtLink to=""><h3 class="text-white" ref="m_page3">Page1</h3></NuxtLink>
