@@ -70,8 +70,12 @@ opacity: 0,
 
 })
 
-const open = () => { m_header_open_animation.play() }
-const close = () => { m_header_open_animation.reverse() }
+const open = () => { m_header_open_animation.play();
+  document.body.style.overflow = "hidden";
+  document.body.style.userSelect = "none";}
+const close = () => { m_header_open_animation.reverse();
+ document.body.style.overflow = "auto";
+  document.body.style.userSelect = "auto"; }
 
 </script>
 
