@@ -7,9 +7,22 @@ export default defineNuxtConfig({
     ssr: false,
     css: ['@/assets/css/tailwind.css'],
     googleFonts: {
+        download: true,
         families: {
           'Architects Daughter': true,
+           Inter: [100, 500, 700],
+           Poppins: true,
+           Mali: {
+            wght: [400, 600, 700],
+          },
         },
-    },
+        subsets: ['latin'],
+        display: 'swap',
+        prefetch: false,
+        preconnect: false,
+        preload: false,
+        base64: false,
+        },
+    
 
 })
