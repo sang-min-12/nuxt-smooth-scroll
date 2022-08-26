@@ -11,8 +11,8 @@
     </div>
     </div>
     <div class="columns-2 w-full mx-auto md:px-10 flex md:py-6 px-5 py-4">
-        <div class="text-2xl font-medium text-black hidden md:flex" ref="logo">LOGO</div>
-         <div class="text-2xl font-medium flex md:hidden logocolor" ref="m_logo">LOGO</div>
+        <div class="text-2xl font-medium text-black md:flex hidden" ref="logo">LOGO</div>
+         <div class="text-2xl font-medium flex md:hidden  text-black" ref="m_logo">LOGO</div>
         <div class="md:hidden flex w-full justify-end"><h3 ref="m_menu_button_open" @click="open" ><p class="text-black border border-gray-200 rounded-full px-4 py-1">Menu</p></h3></div>
         <div class="columns-4 w-full md:flex justify-end gap-12 hidden">
             <NuxtLink to=""><h3 ref="d_page1">Page1</h3></NuxtLink>
@@ -42,23 +42,21 @@ if (process.client) {
   var m_header_open_animation = gsap.timeline({paused: true})
 }
 if (process.client) {
-  var m_header_start_animation = gsap.timeline({})
+  var m_header_start_animation = gsap.timeline({onComplete: changeposition})
 }
 
     onMounted(()=>{
 
-            m_header_open_animation.from(m_screen_menu.value,{
+            m_header_open_animation.to(m_logo.value,{
+                             display: "none"
+                                })
+                            .from(m_screen_menu.value,{
                             duration: 0.6,
                             opacity: 0,
                             display: "none",
                             })
                             .from(m_menu_button_open.value,{
-                            duration: 0.6,
-                           
-                            },"<+=0.12")
-                            .from(logo.value,{
-                            duration: 0.6,
-                            display: 'none',
+                            duration: 0.6,                          
                             },"<+=0.12")
                             .from(m_page1.value,{
                             duration: 0.6,
@@ -85,6 +83,12 @@ duration: 0.4,
             })
 
 })
+
+function changeposition (){
+gsap.to(m_logo.value,{
+  
+})
+}
 
 const open = () => { m_header_open_animation.play();
     document.body.style.overflow = "hidden";
