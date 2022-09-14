@@ -3,6 +3,9 @@ import { defineNuxtConfig } from 'nuxt'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
     modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts'],
+    env:{
+      BASE_URL: "https://reqres.in/api"
+    },
     target: 'static',
     ssr: false,
     css: ['@/assets/css/tailwind.css'],
@@ -10,8 +13,9 @@ export default defineNuxtConfig({
         download: true,
         families: {
           'Architects Daughter': true,
+          'Poppins': true,
+           Lato: [100, 300],
            Inter: [100, 500, 700],
-           Poppins: true,
            Mali: {
             wght: [400, 600, 700],
           },
