@@ -19,6 +19,7 @@ import { onMounted } from 'vue';
 <style scoped>
   #app{
     height: 100 vh;
+    width: 100%;
     overflow: auto;
   }
 </style>

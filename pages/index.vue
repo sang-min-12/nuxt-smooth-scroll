@@ -67,7 +67,7 @@
 
  onMounted(()=>{
     gsap.to(animation.value,{
-    x:1000,
+    x:5,
     scrollTrigger:{
         start: "top center",
     end: "bottom bottom",
