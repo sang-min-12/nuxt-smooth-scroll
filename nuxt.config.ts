@@ -2,7 +2,8 @@ import { defineNuxtConfig } from 'nuxt'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-    modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts'],
+   transpile: ['gsap'],
+    modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@pinia/nuxt',],
     env:{
       BASE_URL: "https://reqres.in/api"
     },

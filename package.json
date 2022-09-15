@@ -12,9 +12,11 @@
     "nuxt": "3.0.0-rc.8"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.4.2",
     "axios": "^0.27.2",
     "gsap": "^3.11.0",
     "locomotive-scroll": "^4.1.4",
+    "pinia": "^2.0.22",
     "smooth-scrollbar": "^8.7.5",
     "split-type": "^0.3.2",
     "vb-smooth": "^1.0.0",
