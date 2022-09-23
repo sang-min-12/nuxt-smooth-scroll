@@ -1,7 +1,7 @@
 <template>
 <div id="app">
     <NuxtLoadingIndicator />
-    <NuxtLayout name="default">
+    <NuxtLayout name="scroll">
         <NuxtPage />
      </NuxtLayout>
 </div>

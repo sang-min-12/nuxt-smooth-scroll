@@ -13,12 +13,15 @@ export interface User {
     first_name: string;
   };
 
-export interface Product {
+export interface AllProducts {
     id: number,
     title: string,
     price: number,
     description: string,
-    image: string,
-    category: string,
-    rating: object,
+    category: {
+        id: number,
+        name: string,
+        image: string,
+    },
+    images: string[]
 }

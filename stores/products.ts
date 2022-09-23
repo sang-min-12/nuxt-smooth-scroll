@@ -11,7 +11,7 @@ export interface Product {
   image: string
 }
 
-interface ProductState {
+interface ProductState { 
   items: Record<string, Product>
   ids: number[]
 }
@@ -38,7 +38,7 @@ export const useProductStore = defineStore({
     async fetchAll() {
       if (this.loaded) return
 
-      const res = await fetch(`${apiUrl}/products`)
+      const res = await fetch('https://api.escuelajs.co/api/v1/products/')
       const data: Product[] = await res.json()
       this.ids = data.map((product) => {
         this.items[product.id] = product

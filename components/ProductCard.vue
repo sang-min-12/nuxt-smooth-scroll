@@ -1,33 +1,32 @@
 <template>
-    <Suspense>
-      <template #fallback>
-        <div op70 italic>
-          <span animate-pulse>Загрузка данных...</span>
-        </div>
-      </template>
-      <div class="flex flex-col justify-between border border-gray-300 rounded-xl w-full sm:w-[45%] lg:w-[28%] m-2 p-4">
-        <figure class="p-6">
+      <div class=" border-2 px-5 py-5 mb-12 flex relative overflow-hidden flex-col">
+        <figure class="object-contain  w-full h-64 mb-7 mt-10">
           <img
-            :src="product.image"
+            :src="product.images[0]"
             alt="Card Image"
-            class="object-contain w-full h-64"
+            class="object-contain  w-full h-64"
           />
         </figure>
-        <div>
+        <div class="flex relative overflow-hidden flex-col">
           <h2 class="font-semibold mb-4">
-         <p><a :href="`${product.title}`"> {{ product.title }}</a></p>
+         <p class="hover:underline"><a :href="`${product.title}`"> {{ product.title }}</a></p>
           </h2>
-          <p>{{ product.price }} руб</p>
-
-
+          <p>{{ product.price }} zł</p>
+          <div class="justify-end flex flex-wrap items-start mx-2">
+            <button class="">add to card</button>
+          </div>
         </div>
       </div>
-    </Suspense>
   </template>
   
   <script setup lang="ts">
+
   import type { Product } from '../stores/products'
-  defineProps<{
-    product: Product
-  }>()
+  defineProps<{ product: Product}>()
+
   </script>
+
+
+<style scoped>
+
+  </style>

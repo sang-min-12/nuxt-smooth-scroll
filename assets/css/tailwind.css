@@ -18,3 +18,11 @@
     user-select: none;
   }
 
+  .main {
+    overflow: auto;
+    height: 100vh;
+  }
+
+  body{
+overflow: hidden;
+  }

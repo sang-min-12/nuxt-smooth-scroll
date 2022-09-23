@@ -5,7 +5,7 @@ export default defineNuxtConfig({
    transpile: ['gsap'],
     modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@pinia/nuxt',],
     env:{
-      BASE_URL: "https://reqres.in/api"
+      BASE_URL: "https://api.escuelajs.co/api/v1"
     },
     target: 'static',
     ssr: false,

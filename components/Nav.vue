@@ -1,5 +1,5 @@
 <template>
-<div>
+<nav class="nav" data-scroll data-scroll-sticky data-scroll-target="main">
     <div class="bg-black fixed min-h-screen w-screen flex overflow-hidden" ref="m_screen_menu">
         <div class="md:hidden flex absolute  right-5 top-4"><button @click="close" class="active:bg-gray-800 click" ref="m_menu_button_close" ><p class="text-white border border-white  rounded-full px-4 py-1">Zamkij</p></button></div>
         <div class="md:hidden flex absolute left-5 top-4" ref="m_menu_button_close" @click="close"><p class="text-white text-2xl font-mediu">LOGO</p></div>
@@ -17,11 +17,11 @@
         <div class="columns-4 w-full md:flex justify-end gap-12 hidden">
             <NuxtLink to="hermes"><h3 ref="d_page1">Hermes</h3></NuxtLink>
             <NuxtLink to="pinia-products"><h3 ref="d_page2">Pinia Products</h3></NuxtLink>
-            <NuxtLink to=""><h3 ref="d_page3">Store</h3></NuxtLink>
+            <NuxtLink to="newproducts"><h3 ref="d_page3">New Product</h3></NuxtLink>
             <NuxtLink to=""><h3 ref="d_page4">UserTest</h3></NuxtLink>
         </div>
     </div>
-</div>
+</nav>
 </template>
 
 <script setup lang="ts">
