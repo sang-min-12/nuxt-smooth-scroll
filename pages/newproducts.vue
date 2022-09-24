@@ -15,7 +15,6 @@ const productState = useProductNewState()
 productState.fetchAll()
 const products = computed(()=>productState.list)
 
-console.log(products)
 </script>
 
 

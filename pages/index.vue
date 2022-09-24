@@ -1,6 +1,6 @@
 <template>
   <div class="mt-20 px-20 mx-aute mb-20 gap-20">
-    <h2>tes fdggggggggggggggggft</h2>
+    <h2>tes fdggggggggggggggggft dfdfdfdfdf </h2>
 
     <h1 class="h1 text-center">Titlej</h1>
     gg
