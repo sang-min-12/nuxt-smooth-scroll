@@ -1,29 +1,27 @@
 <script setup lang="ts">
-const scroll = ref();
-provide('scroll', scroll);
+import LocomotiveScroll from 'locomotive-scroll';
+onMounted(() => {
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true,
+    multiplier: 0.8,
+  });
+  provide('scroll', scroll);
+});
 
-  onMounted(() => {
-  setTimeout(async () => {
-    // @ts-ignore
-    const locomotiveScroll = await import('locomotive-scroll');
-    // eslint-disable-next-line new-cap
-    scroll.value = new locomotiveScroll.default({
-      el: document.querySelector('#main'),
-      smooth: true,
-      multiplier: 0.8,
-    });
-  }, 400);
-});
-onUnmounted(() => {
-  scroll.value.destroy();
-});
   </script>
   
   <template>
-    <main class="main">
+    <main class="main" data-scroll-container>
       <Nav />
       <slot />
     </main>
   </template>
   <style scoped>
+
+   .main {
+  position: relative;
+  overflow: hidden;
+    }
+
     </style>

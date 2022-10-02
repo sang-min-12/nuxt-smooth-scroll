@@ -9,7 +9,8 @@ export default defineNuxtConfig({
     },
     target: 'static',
     ssr: false,
-    css: ['@/assets/css/tailwind.css'],
+    css: ['@/assets/css/tailwind.css',
+          'locomotive-scroll/dist/locomotive-scroll.css'],
     googleFonts: {
         download: true,
         families: {
