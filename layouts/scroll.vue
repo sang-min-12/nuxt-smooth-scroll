@@ -4,7 +4,7 @@ onMounted(() => {
   const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true,
-    multiplier: 0.8,
+    reloadOnContextChange: true,
   });
   provide('scroll', scroll);
 });
@@ -14,13 +14,14 @@ onMounted(() => {
   <template>
     <main class="main" data-scroll-container>
       <Nav />
+
       <slot />
     </main>
   </template>
   <style scoped>
 
    .main {
-  position: relative;
+    position: relative;
   overflow: hidden;
     }
 
