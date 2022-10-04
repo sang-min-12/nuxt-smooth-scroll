@@ -1,6 +1,6 @@
 <template>
   <div class="mt-20 px-20 mx-aute mb-20 gap-20">
-    <h1 class="h1 text-center" data-scroll>Title</h1>
+    <h1 class="h1 text-center" data-scroll >Title</h1>
     <h1 class="mt-10" data-scroll>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -102,8 +102,8 @@
       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
       est laborum
     </h1>
-    <h1 class="h1 text-center" data-scroll>Title</h1>
-    <h1 class="mt-10" data-scroll>
+    <h1 class="h1 text-center mt-12" data-scroll ref="animation">Animation</h1>
+    <h1 class="mt-10" data-scroll >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -137,8 +137,8 @@
       est laborum
     </h1>
 
-    <h1 class="h1 text-center" data-scroll>Title</h1>
-    <h1 class="mt-10" data-scroll>
+    <h1 class="h1 text-center" data-scroll >Title</h1>
+    <h1 class="mt-10" data-scroll >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -500,17 +500,23 @@ gsap.registerPlugin(ScrollTrigger);
 
 const animation = ref();
 
-onMounted(() => {
-  gsap.to(animation.value, {
-    x: 500,
-    scrollTrigger: {
-      start: "center  center",
-      end: "bottom bottom",
-      toggleActions: "play none none reset",
-      markers: true,
-    },
-  });
+if (process.client) {
+  var animationone = gsap.timeline()
+}
 
+onMounted(() => {
+  gsap.set(animation.value, {
+    x: 50,
+    y: 10,
+  });
+  const scroll = new LocomotiveScroll
+  scroll.on("scroller", ScrollTrigger.update);
+
+  animationone.from(animation.value,{
+    x:500,
+    duration:2,
+    rotation: 180,
+  })
 
 });
 </script>

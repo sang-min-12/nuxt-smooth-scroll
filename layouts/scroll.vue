@@ -1,12 +1,16 @@
 <script setup lang="ts">
+import {ref, onMounted} from 'vue';
+import gsap from "gsap";
 import LocomotiveScroll from 'locomotive-scroll';
+import ScrollTrigger from "gsap/ScrollTrigger";
+
 onMounted(() => {
   const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true,
     reloadOnContextChange: true,
   });
-  provide('scroll', scroll);
+  scroll.on("scroller", ScrollTrigger.update)
 });
 
   </script>
