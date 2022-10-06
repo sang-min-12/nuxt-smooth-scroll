@@ -16,8 +16,8 @@
         <div class="md:hidden flex w-full justify-end"><button class="click active:bg-gray-200 active:absolute" ref="m_menu_button_open" @click="open" ><p class="text-black border border-gray-200 rounded-full px-4 py-1">Menu</p></button></div>
         <div class="columns-4 w-full md:flex justify-end gap-12 hidden">
             <NuxtLink to="hermes"><h3 ref="d_page1">Hermes</h3></NuxtLink>
-            <NuxtLink to="pinia-products"><h3 ref="d_page2">Pinia Products</h3></NuxtLink>
-            <NuxtLink to="newproducts"><h3 ref="d_page3">New Product</h3></NuxtLink>
+            <NuxtLink to=""><h3 ref="d_page2">Pinia Products</h3></NuxtLink>
+            <NuxtLink to=""><h3 ref="d_page3">New Product</h3></NuxtLink>
             <NuxtLink to=""><h3 ref="d_page4">UserTest</h3></NuxtLink>
         </div>
     </div>
