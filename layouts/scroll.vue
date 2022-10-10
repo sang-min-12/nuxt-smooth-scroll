@@ -3,16 +3,22 @@ import {ref, onMounted} from 'vue';
 import gsap from "gsap";
 import LocomotiveScroll from 'locomotive-scroll';
 import ScrollTrigger from "gsap/ScrollTrigger";
+provide('scroll', scroll);
 
 onMounted(() => {
   const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true,
     reloadOnContextChange: true,
+    getSpeed: true,
+    getDirection: true,
+    offset:["15%",0]
   });
-  scroll.on("scroller", ScrollTrigger.update)
-});
 
+  new ResizeObserver(() => scroll.update()).observe(document.querySelector("[data-scroll-container]"))
+
+
+});
   </script>
   
   <template>
