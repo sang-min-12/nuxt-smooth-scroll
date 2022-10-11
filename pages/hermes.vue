@@ -1,5 +1,5 @@
 <template>
-<div class="mt-20 mb-32 px-20 mx-aute gap-20" data-scroll-section>
+<div class="mt-20 mb-32 px-20 mx-aute gap-20 one">
      <h1 class="text-center mt-8 mb-8 title-font"  >Hermes Windows</h1>
     <div class="mb-3.5 justify-between flex"        >
         <p class="font-semibold">TRUE</p>
