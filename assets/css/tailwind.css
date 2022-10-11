@@ -7,6 +7,26 @@
     font-size: 48px ;
 }
 
+.title-font{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 135px ;
+    font-weight: 500;
+}
+.title-size1{
+   font-size: 100px;
+   letter-spacing: -.02em;
+   font-weight: 300;
+   font-weight: 500;
+   line-height: 1.1;
+}
+
+.title-size2{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    letter-spacing: -.02em;
+    font-weight: 500;
+ }
+
 .click{
     -webkit-tap-highlight-color:transparent;
     border-radius: 999px;
@@ -21,5 +41,5 @@
 
  .c-scrollbar_thumb {
          /* opacity: 1 !important; */
-        background-color: red !important;
+        background-color: #ACA8A5 !important;
   }

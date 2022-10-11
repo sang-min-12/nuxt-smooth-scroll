@@ -16,6 +16,8 @@ export default defineNuxtConfig({
         families: {
           'Architects Daughter': true,
           'Poppins': true,
+          'EB Garamond': true,
+          'Cormorant Garamond': true,
            Lato: [100, 300],
            Inter: [100, 500, 700],
            Mali: {
