@@ -11,6 +11,7 @@ onMounted(() => {
     smooth: true,
     reloadOnContextChange: true,
     getSpeed: true,
+    resetNativeScroll: true,
     getDirection: true,
     offset:["15%",0]
   });
