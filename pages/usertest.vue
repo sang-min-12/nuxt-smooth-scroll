@@ -1,5 +1,5 @@
 <template>
-<div class="mt-20 mb-32 px-20 mx-aute gap-20">
+<div class="mt-20 mb-32 px-20 mx-aute gap-20" data-scroll-section>
 
   <div class=""            >
           <h1 class="text-center h1 mt-5"      >User test</h1>

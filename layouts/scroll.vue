@@ -13,9 +13,8 @@ onMounted(() => {
   
   <template>
     <main class="main background" data-scroll-container>
-      <div data-scroll-section>
-        <Nav /><slot />
-      </div>
+        <Nav />
+<slot />
     </main>
   </template>
   <style scoped>

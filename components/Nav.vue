@@ -1,5 +1,5 @@
 <template>
-<nav class="nav">
+<nav class="nav" data-scroll-section>
     <div class="bg-black fixed min-h-screen w-screen flex overflow-hidden" ref="m_screen_menu">
         <div class="md:hidden flex absolute  right-5 top-4"><button @click="close" class="active:bg-gray-800 click" ref="m_menu_button_close" ><p class="text-white border border-white  rounded-full px-4 py-1">Zamkij</p></button></div>
         <div class="md:hidden flex absolute left-5 top-4" ref="m_menu_button_close" @click="close"><p class="text-white text-2xl font-mediu">LOGO</p></div>
@@ -111,4 +111,11 @@ const close = () => { m_header_open_animation.reverse();
 </script>
 
 <style scoped>
+  .nav{
+    display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+
+  }
 </style>

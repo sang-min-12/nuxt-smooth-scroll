@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-20 mb-32 px-20 mx-aute gap-20">
+  <div class="mt-20 mb-32 px-20 mx-aute gap-20" data-scroll-section>
     <div class="">
           <h1 class="text-center h1 mt-5"      >Home</h1>
           <h1 class="mt-10 text-2xl"      >
@@ -37,7 +37,7 @@
           </h1>
         </div>
         <div class=""    >
-          <h1 class="text-center h1 mt-5"      >Title 1</h1>
+          <h1 class="text-center h1 mt-5"   ref="animation"   >Animation</h1>
           <h1 class="mt-10 text-2xl"      >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -162,18 +162,8 @@ if (process.client) {
 }
 
 onMounted(() => {
-  gsap.set(animation.value, {
-    x: 50,
-    y: 10,
-  });
-  const scroll = new LocomotiveScroll
-  scroll.on("scroller", ScrollTrigger.update);
+const locoScroll = new LocomotiveScroll
 
-  animationone.from(animation.value,{
-    x:500,
-    duration:2,
-    rotation: 180,
-  })
 
 });
 </script>
