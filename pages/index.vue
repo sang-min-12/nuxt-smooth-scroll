@@ -1,8 +1,8 @@
 <template>
-  <div class="mt-20 mb-32 px-20 mx-aute gap-20" data-scroll-section>
-    <div class="">
-          <h1 class="text-center h1 mt-5"      >Home</h1>
-          <h1 class="mt-10 text-2xl"      >
+  <div class="mt-20 mb-32 px-20 mx-aute gap-20" ref="smoothscroll" data-scroll-section>
+    <div class="smooth-scroll">
+          <h1 class="text-center h1 mt-5" >Home</h1>
+          <h1 class="mt-10 text-2xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
             veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -36,9 +36,9 @@
             est laborum
           </h1>
         </div>
-        <div class=""    >
-          <h1 class="text-center h1 mt-5"   ref="animation"   >Animation</h1>
-          <h1 class="mt-10 text-2xl"      >
+        <div class="">
+          <h1 class="text-center h1 mt-5" >Title</h1>
+          <h1 class="mt-10 text-2xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
             veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -72,9 +72,9 @@
             est laborum
           </h1>
         </div>
-        <div class=""  >
-          <h1 class="text-center h1 mt-5"      >Title 1</h1>
-          <h1 class="mt-10 text-2xl"      >
+        <div class="">
+          <span class="text-center h1 mt-5" ref="animation">Animation</span>
+          <h1 class="mt-10 text-2xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
             veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -108,9 +108,9 @@
             est laborum
           </h1>
         </div>
-        <div class=""   >
-          <h1 class="text-center h1 mt-5"      >Title 1</h1>
-          <h1 class="mt-10 text-2xl"      >
+        <div class="" >
+          <h1 class="text-center h1 mt-5">Title 1</h1>
+          <h1 class="mt-10 text-2xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
             veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -150,20 +150,71 @@
 
 <script setup lang="ts">
 import gsap from "gsap";
+import { ref, onMounted } from "vue";
 import LocomotiveScroll from 'locomotive-scroll';
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { ref, onMounted } from "vue";
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger,);
+
+
 
 const animation = ref();
-
-if (process.client) {
-  var animationone = gsap.timeline()
-}
+const smoothscroll = ref();
 
 onMounted(() => {
-const locoScroll = new LocomotiveScroll
+  gsap.registerPlugin(ScrollTrigger,);
+  const locoScroll = new LocomotiveScroll
 
 
-});
+                
+          // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+          locoScroll.on("scroll", ScrollTrigger.update);
+
+          // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
+          ScrollTrigger.scrollerProxy(smoothscroll.value, {
+            scrollTop(value) {
+              return arguments.length ? locoScroll.scrollTo(value, {duration: 0, disableLerp: true}) : locoScroll.scroll.instance.scroll.y;
+            }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+            getBoundingClientRect() {
+              return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+            },
+          
+          });
+
+          // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+          ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+          ScrollTrigger.defaults({ scroller: smoothscroll.value });
+          // --- SETUP END ---
+
+
+
+
+                          gsap.to(animation.value, {
+                            scrollTrigger: {
+                              trigger:smoothscroll.value,
+                              scrub: true,
+                              start: "top bottom",
+                              end: "top top",
+                                  },
+                                  x: 200,
+                                  y:20,
+                        scaleX: 0,
+                        markers: true, 
+                        ease: "none"
+                      });
+
+  
+})
 </script>
+
+<style scoped>
+.line {
+  width: 100%;
+  max-width: 800px;
+  height: 8px;
+  margin: 0 0 10px 0;
+  position: relative;
+  display: inline-block;
+  background-color: black;
+}
+
+</style>

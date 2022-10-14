@@ -38,7 +38,7 @@
           </h1>
         </div>
         <div class=""            >
-          <h1 class="text-center h1 mt-5"      >User test</h1>
+          <h1 class="text-center h1 mt-5"  ref="user"    >User</h1>
           <h1 class="mt-10 text-2xl"      >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -76,3 +76,17 @@
 
 </div>
 </template>
+
+
+<script setup lang="ts">
+import gsap from "gsap";
+import { ref, onMounted } from "vue";
+import LocomotiveScroll from 'locomotive-scroll';
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger,);
+const user = ref()
+
+onMounted(() => {
+
+})
+</script>
