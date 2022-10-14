@@ -20,8 +20,7 @@ onMounted(() => {
   <style scoped>
 
    .main {
-    position: relative;
-  overflow: hidden;
+   position: fixed;
     }
     .background{
    background-color:#F5EFEB;

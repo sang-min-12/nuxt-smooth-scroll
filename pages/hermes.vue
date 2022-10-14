@@ -1,6 +1,6 @@
 <template>
 <div class="mt-20 mb-32 px-20 mx-aute gap-20 one" data-scroll-section>
-     <h1 class="text-center mt-8 mb-8 title-font"  >Hermes Windows</h1>
+     <h1 class="text-center mt-8 mb-8 title-font"  data-scroll>Hermes Windows</h1>
     <div class="mb-3.5 justify-between flex"        >
         <p class="font-semibold">TRUE</p>
         <p class="font-semibold">X</p>
@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="ml-20"        >
-        <p class="title-font title-size1 mt-52">V‌‌‌‌‌‌ibrant windows display <br> the Hermès Summer<br> Collection with neon<br>lighting and sustainable<br>materials‌‌‌‌‌‌.‌‌‌‌‌‌</p>
+        <p class="title-font title-size1 mt-52" data-scroll>V‌‌‌‌‌‌ibrant windows display <br> the Hermès Summer<br> Collection with neon<br>lighting and sustainable<br>materials‌‌‌‌‌‌.‌‌‌‌‌‌</p>
     </div>
     <div class="mt-8 columns-2 flex justify-end gap-7 mx-44"        >
         <p class="w-1/4">Since 2017‌,‌ TRUE have enjoyed creating many window displays in the UK and Europe for Hermès‌,‌ the French luxury fashion brand‌.‌ Working with talented designers such as ‌A‌nna Burns and Fotis Evans‌,‌ the imaginative‌,‌ themed windows are transformed overnight‌,‌ often with multiple sites launching simultaneously‌.‌‌</p>
