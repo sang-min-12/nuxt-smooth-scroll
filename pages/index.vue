@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-20 mb-32 px-20 mx-aute gap-20" ref="smoothscroll" data-scroll-section>
+  <div class="mt-20 mb-32 px-20 mx-aute gap-20 smooth-scroll" ref="smoothscroll" data-scroll-section>
     <div class="smooth-scroll">
           <h1 class="text-center h1 mt-5" >Home</h1>
           <h1 class="mt-10 text-2xl">
@@ -177,7 +177,6 @@ onMounted(() => {
             getBoundingClientRect() {
               return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
             },
-          
           });
 
           // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
@@ -188,20 +187,19 @@ onMounted(() => {
 
 
 
-                          gsap.to(animation.value, {
-                            scrollTrigger: {
-                              trigger:smoothscroll.value,
-                              scrub: true,
-                              start: "top bottom",
-                              end: "top top",
-                                  },
-                                  x: 200,
-                                  y:20,
-                        scaleX: 0,
-                        markers: true, 
-                        ease: "none"
-                      });
-
+          gsap.to(animation.value, {
+  scrollTrigger: {
+    trigger:smoothscroll.value,
+    scrub: true,
+    start: "top bottom",
+    end: "top top",
+    markers: true, // <- HERE
+  },
+  x: 200,
+  y:20,
+  scaleX: 0,
+  ease: "none"
+});
   
 })
 </script>

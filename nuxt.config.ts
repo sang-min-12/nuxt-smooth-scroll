@@ -2,7 +2,9 @@ import { defineNuxtConfig } from 'nuxt'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-   transpile: ['gsap'],
+  build: {
+    transpile: ["gsap"]
+  },
     modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@pinia/nuxt',],
     env:{
       BASE_URL: "https://api.escuelajs.co/api/v1"
