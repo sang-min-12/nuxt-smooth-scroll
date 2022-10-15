@@ -144,6 +144,9 @@
             est laborum
           </h1>
         </div>
+
+      <Input />
+
   </div>
 </template>
 
