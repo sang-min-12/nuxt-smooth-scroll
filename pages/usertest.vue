@@ -26,8 +26,8 @@ const update = async() => await $fetch( "https://api.escuelajs.co/api/v1/product
                   },
         method: "put",
         body: { 
-          title: title.value,
-          price: price.value
+          'title': title.value,
+          'price': price.value
          }
     });
     
