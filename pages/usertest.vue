@@ -4,7 +4,7 @@
       <form>
       <label>Enter Title</label>
       <input type="text" v-model="title"/>
-      <input  class="ml-5" type="number" v-model="price"/>
+      <input  class="ml-10" type="number" v-model="price"/>
       <button class="ng-bt-pri" @click="update">Send Message</button>
       </form>
   {{title}}
@@ -20,7 +20,7 @@ import { ref, onMounted } from "vue";
 const title = ref("");
 const price = ref("");
 
-const update = async() => await $fetch( "https://api.escuelajs.co/api/v1/products/5", {
+const update = async() => await $fetch( "https://api.escuelajs.co/api/v1/products/10", {
         headers: {
            "Content-Type": "application/json",
                   },
@@ -31,5 +31,5 @@ const update = async() => await $fetch( "https://api.escuelajs.co/api/v1/product
          }
     });
     
-const {data} = await useFetch('https://api.escuelajs.co/api/v1/products/5')
+const {data} = await useFetch('https://api.escuelajs.co/api/v1/products/10')
 </script>
