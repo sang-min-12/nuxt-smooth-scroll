@@ -18,6 +18,7 @@
     "gsap": "^3.11.0",
     "locomotive-scroll": "^4.1.4",
     "node-sass": "^7.0.3",
+    "ohmyfetch": "^0.4.19",
     "pinia": "^2.0.22",
     "sass": "^1.55.0",
     "smooth-scrollbar": "^8.7.5",
