@@ -4,6 +4,7 @@
       <form>
       <label>Enter Title</label>
       <input type="text" v-model="title"/>
+      <input  class="ml-5" type="number" v-model="price"/>
       <button class="ng-bt-pri" @click="update">Send Message</button>
       </form>
   {{title}}
@@ -14,20 +15,20 @@
 
 
 <script setup lang="ts">
-import { $fetch } from 'ohmyfetch'
-import { Input } from 'postcss';
 import { ref, onMounted } from "vue";
 
-var title = ref("");
+const title = ref("");
+const price = ref("");
 
 const update = async() => await $fetch( "https://api.escuelajs.co/api/v1/products/5", {
         headers: {
            "Content-Type": "application/json",
                   },
         method: "put",
-        body: ({ 
-          title: title.value
-         })
+        body: { 
+          title: title.value,
+          price: price.value
+         }
     });
     
 const {data} = await useFetch('https://api.escuelajs.co/api/v1/products/5')
