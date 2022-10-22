@@ -17,8 +17,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 
-const title = ref("");
-const price = ref("");
+const title = ref(" ");
+const price = ref(" ");
 
 const update = async() => await $fetch( "https://api.escuelajs.co/api/v1/products/61", {
         headers: {
