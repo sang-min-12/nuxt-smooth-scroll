@@ -3,7 +3,7 @@
   <div class="mt-20 mb-20">
       <form>
       <label>Enter Title</label>
-      <input type="text" v-model="title"/>
+      <input type="text" v-model="title" v-model="data.title"/>
       <input  class="ml-10" type="number" v-model="price"/>
       <button class="ng-bt-pri" @click="update">Send Message</button>
       </form>
