@@ -29,7 +29,7 @@
         position until it has traveled 100% of the viewport's height (<code
           >end: "+=100%"</code
         >), then the orange panel is unpinned and normal scrolling resumes. Padding is
-        added automatically to push the rest of theyh content down so that it catches up
+        added automatically to push the rest of the content down so that it catches up
         with the scroll when it unpins. You can set <code>pinSpacing: false</code> to
         prevent that if you prefer.
       </p>
@@ -59,8 +59,18 @@ gsap.registerPlugin(ScrollTrigger);
 // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
 onMounted(() => {
   const locoScroll = new LocomotiveScroll({
-    el: document.querySelector(".smooth-scroll"),
+     el: document.querySelector(".smooth-scroll"),
+
+    inertia: 0.8,
     smooth: true,
+    getDirection: true,
+    smartphone: {
+      smooth: true,
+      breakpoint: 0,
+      inertia: 0.8,
+      getDirection: true,
+    },
+
   });
   // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
   locoScroll.on("scroll", ScrollTrigger.update);
@@ -76,6 +86,9 @@ onMounted(() => {
       return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
     },
     // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+    // pinType: document.querySelector(".smooth-scroll").style.transform
+    //   ? "transform"
+    //   : "fixed",
   });
 
   // --- RED PANEL ---
