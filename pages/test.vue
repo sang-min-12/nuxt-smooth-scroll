@@ -62,9 +62,11 @@ onMounted(() => {
      el: document.querySelector(".smooth-scroll"),
     smooth: true,
     lerp: 0.12,
+    getSpeed: true,
     smartphone: {
       smooth: true,
       lerp: 1,
+      getSpeed: true,
     },
 
   });
