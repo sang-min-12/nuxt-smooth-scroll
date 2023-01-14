@@ -68,6 +68,7 @@ onMounted(() => {
     smoothMobile: 0,
     smartphone: {
         smooth: !0,
+        touchMultiplier: 10,
     },
 
   });
