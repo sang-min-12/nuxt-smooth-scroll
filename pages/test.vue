@@ -60,8 +60,6 @@ gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
   const locoScroll = new LocomotiveScroll({
      el: document.querySelector(".smooth-scroll"),
-
-    inertia: 0.8,
     smooth: true,
     getDirection: true,
     smartphone: {
