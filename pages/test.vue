@@ -66,9 +66,6 @@ onMounted(() => {
     getDirection: true,
     smartphone: {
       smooth: true,
-      breakpoint: 0,
-      inertia: 0.8,
-      getDirection: true,
     },
 
   });
