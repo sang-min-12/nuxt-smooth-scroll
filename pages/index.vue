@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-20 mb-32 px-20 mx-aute gap-20 smooth-scroll" ref="smoothscroll" data-scroll-section>
+  <div class="mt-20 mb-32 px-20 mx-aute gap-20 smooth-scroll" data-scroll-section>
     <div class="smooth-scroll">
           <h1 class="text-center h1 mt-5" >Home</h1>
           <h1 class="mt-10 text-2xl">
@@ -72,7 +72,7 @@
             est laborum
           </h1>
         </div>
-        <div class="">
+        <div class="" ref="smoothscroll">
           <span class="text-center h1 mt-5" ref="animation">Animation</span>
           <h1 class="mt-10 text-2xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -192,16 +192,14 @@ onMounted(() => {
 
           gsap.to(animation.value, {
   scrollTrigger: {
-    trigger:smoothscroll.value,
+    trigger:document.body,
     scrub: true,
-    start: "top bottom",
-    end: "top top",
+    start: "top center",
+    end: "bottom center",
     markers: true, // <- HERE
   },
   x: 200,
-  y:20,
-  scaleX: 0,
-  ease: "none"
+  y:200,
 });
   
 })

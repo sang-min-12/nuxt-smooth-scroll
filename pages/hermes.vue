@@ -47,5 +47,9 @@
 
 
 <style scoped>
+.test{
+    font-family: 'Mali', cursive;
+    font-weight: 700;
 
+}
 </style>
