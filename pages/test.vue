@@ -29,7 +29,7 @@
         position until it has traveled 100% of the viewport's height (<code
           >end: "+=100%"</code
         >), then the orange panel is unpinned and normal scrolling resumes. Padding is
-        added automatically to push the rest of the content down so that it catches up
+        added automatically to push the rest of theyh content down so that it catches up
         with the scroll when it unpins. You can set <code>pinSpacing: false</code> to
         prevent that if you prefer.
       </p>
