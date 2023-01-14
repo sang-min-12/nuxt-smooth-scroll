@@ -61,10 +61,10 @@ onMounted(() => {
   const locoScroll = new LocomotiveScroll({
      el: document.querySelector(".smooth-scroll"),
     smooth: true,
-    lerp: 0.14,
+    lerp: 0.12,
     smartphone: {
       smooth: true,
-      lerp: 0.7,
+      lerp: 1,
     },
 
   });
