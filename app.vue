@@ -1,19 +1,22 @@
 <template>
-<div id="app">
-    <NuxtLoadingIndicator />
-    <NuxtLayout name="scroll">
+    <div class="h-screen">
+      <div
+        v-if="loading"
+        class="fixed left-0 top-0 h-0.5 w-full z-50 bg-green-500"
+      ></div>
+      <NuxtLayout name="scroll">
         <NuxtPage />
-     </NuxtLayout>
-</div>
-</template>
-<script setup lang="ts">
-import { onMounted } from 'vue';
-
-import Scrollbar from 'smooth-scrollbar';
-
-
-</script>
-
-<style scoped>
-
-</style>
+      </NuxtLayout>
+    </div>
+  </template>
+  
+  <script setup lang="ts">
+  const nuxtApp = useNuxtApp();
+  const loading = ref(false);
+  nuxtApp.hook("page:start", () => {
+    loading.value = true;
+  });
+  nuxtApp.hook("page:finish", () => {
+    loading.value = false;
+  });
+  </script>
