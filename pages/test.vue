@@ -1,5 +1,5 @@
 <template>
-  <div class="smooth-scroll">
+  <div class="smooth-scroll" id="main">
     <div class="description panel blue">
       <div>
         <h1>Locomotive Scroll + ScrollTrigger</h1>
@@ -50,23 +50,18 @@
 
 <script setup lang="ts">
 import gsap from "gsap";
-import {onMounted } from "vue";
+import {onMounted, ref } from "vue";
 import LocomotiveScroll from "locomotive-scroll";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+const scroll = ref();
 
+gsap.registerPlugin(ScrollTrigger);
 // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
 onMounted(() => {
   const locoScroll = new LocomotiveScroll({
      el: document.querySelector(".smooth-scroll"),
      smooth: true,
-    lerp: 0.03, // Linear Interpolation, 0 > 1 // Try 0.01
-    smartphone: {
-        smooth: !0,
-        touchMultiplier: 12,
-    },
-
   });
   // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
   locoScroll.on("scroll", ScrollTrigger.update);
@@ -82,9 +77,9 @@ onMounted(() => {
       return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
     },
     // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-    // pinType: document.querySelector(".smooth-scroll").style.transform
-    //   ? "transform"
-    //   : "fixed",
+    pinType: document.querySelector(".smooth-scroll").style.transform
+      ? "transform"
+      : "fixed",
   });
 
   // --- RED PANEL ---
@@ -140,6 +135,7 @@ onMounted(() => {
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
   ScrollTrigger.refresh();
 });
+
 </script>
 
 <style scoped>
